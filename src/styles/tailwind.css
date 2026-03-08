@@ -1,0 +1,51 @@
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
+
+@layer base {
+  html { 
+    scroll-behavior: smooth; 
+  }
+  body {
+    font-family: "Jost", sans-serif;
+    background-color: #ffffff;
+    color: #4A3040;
+    -webkit-font-smoothing: antialiased;
+  }
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+}
+
+@layer components {
+  .heading-display {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .container-main {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .section-padding {
+    padding: 6rem 0;
+  }
+  @media (max-width: 768px) {
+    .section-padding { 
+      padding: 4rem 0; 
+    }
+  }
+}
+
+/* Hide scrollbar for gallery */
+.hide-scrollbar::-webkit-scrollbar { 
+  display: none; 
+}
+.hide-scrollbar { 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
