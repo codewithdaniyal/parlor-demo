@@ -10,22 +10,25 @@ import { TestimonialsSection } from "./components/sections/TestimonialsSection";
 import { BookingSection } from "./components/sections/BookingSection";
 import { LocationSection } from "./components/sections/LocationSection";
 import { WhatsAppButton } from "./components/ui/WhatsAppButton";
+import { SalonProvider } from "./context/SalonContext";
 
 export default function App() {
   return (
+    <SalonProvider>
     <main>
-      <Navbar />
-      <HeroSection />
-      <StatsSection />
-      <AboutSection />
-      <ServicesSection />
-      <PackagesSection />
-      <GallerySection />
-      <TestimonialsSection />
-      <BookingSection />
-      <LocationSection />
-      <Footer />
-      <WhatsAppButton />
+    <Navbar />
+    < HeroSection />
+    <StatsSection />
+    < AboutSection />
+    <ServicesSection />
+    < PackagesSection />
+    <GallerySection />
+    < TestimonialsSection />
+    <BookingSection />
+    < LocationSection />
+    <Footer />
+    < WhatsAppButton />
     </main>
+    </SalonProvider>
   );
 }

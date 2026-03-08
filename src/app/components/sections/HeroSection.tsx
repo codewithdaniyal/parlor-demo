@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Calendar, MessageCircle, ChevronDown, Star } from "lucide-react";
 import { motion } from "motion/react";
-import { salonData } from "../../../data/salon";
+import { useSalon } from "../../context/SalonContext";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import heroImg from "../../../images/1d5aa549087a8653fb665d9934198f7b.jpg";
 
@@ -45,6 +45,7 @@ const HalftoneDecor = ({ className }: { className: string }) => {
 };
 
 export function HeroSection() {
+  const { salon } = useSalon();
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
   useEffect(() => {
@@ -111,7 +112,7 @@ animate = {{ opacity: 1, y: 0 }}
 transition = {{ delay: 0.65 }}
 className = "font-body font-light text-[1.05rem] text-[#4A3040]/80 leading-[1.8] max-w-[440px]"
   >
-  { salonData.sub_tagline }
+  { salon.sub_tagline }
   </motion.p>
 
 {/* Buttons */ }
@@ -129,7 +130,7 @@ className = "inline-flex items-center gap-2 bg-[#E91E8C] text-white rounded-full
     Book Appointment
       </a>
       < a
-href = {`https://wa.me/${salonData.whatsapp}?text=Hi! I'd like to know more about ${salonData.name}`}
+href = {`https://wa.me/${salon.whatsapp}?text=Hi! I'd like to know more about ${salon.name}`}
 target = "_blank"
 rel = "noopener noreferrer"
 className = "inline-flex items-center gap-2 border-2 border-[#E91E8C]/30 text-[#C2157A] rounded-full px-8 py-3.5 font-body font-medium tracking-wide hover:bg-[#E91E8C] hover:text-white hover:border-[#E91E8C] transition-all duration-300"
@@ -213,7 +214,7 @@ className = "absolute bottom-0 left-0 right-0 bg-white/50 backdrop-blur-md borde
         <Star className="w-5 h-5 text-[#E91E8C] fill-[#E91E8C]" />
           <div>
           <div className="heading-display text-[1.2rem] text-[#1C0A12]" >
-            { salonData.rating } / 5
+            { salon.rating } / 5
             </div>
             < div className = "font-body text-[0.68rem] uppercase tracking-[0.12em] text-[#9B7A8A]" >
               Rating
@@ -228,7 +229,7 @@ className = "absolute bottom-0 left-0 right-0 bg-white/50 backdrop-blur-md borde
   <span className="text-[1.2rem]" >💄</span>
     < div >
     <div className="heading-display text-[1.2rem] text-[#1C0A12]" >
-      { salonData.total_clients } +
+      { salon.total_clients } +
       </div>
       < div className = "font-body text-[0.68rem] uppercase tracking-[0.12em] text-[#9B7A8A]" >
         Happy Clients
